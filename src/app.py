@@ -9,7 +9,8 @@ def details():
     return jsonify(
         {
             'time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            'host': socket.gethostname() 
+            'host': socket.gethostname(),
+            'message': 'New field' 
         }
     )
 
