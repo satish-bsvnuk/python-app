@@ -30,6 +30,7 @@ jobs:
           tags: ghcr.io/satish-bsvnuk/python-app:${{ env.COMMIT_ID }}
 
   cd:
+    needs: ci
     runs-on: self-hosted
     steps:
       - name: ArgoCD CLI Install
@@ -38,7 +39,7 @@ jobs:
           curl -ksSL -o argocd-linux-amd64 argocd.test.com:8443/download/v$VERSION/argocd-linux-amd64
           sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
           rm argocd-linux-amd64
-          
+
       - name: ArgoCD app sync
         shell: bash
         run: |
