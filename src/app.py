@@ -10,7 +10,7 @@ def details():
         {
             'time': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'host': socket.gethostname(),
-            'message': 'New field - upd3' 
+            'message': 'Hello world' 
         }
     )
 
